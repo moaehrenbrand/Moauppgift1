@@ -34,6 +34,13 @@ for (let i = 0; i < cities.length; i++) {
 }
 
 //----------------------------------
+if (!cityFound) {
+  document.querySelector("h2").textContent = `${cityFromUser} finns inte i databasen`;
+  document.querySelector("title").textContent = `Not found`;
+  document.querySelector("h3").textContent = null;
+}
+
+//---------------------------------- Längst bort
 
 let maxDistance = 0;
 let farthestCityIndex = -1;
