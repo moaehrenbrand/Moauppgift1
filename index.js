@@ -42,8 +42,10 @@ const ifCityMatch = (cityName, cityIndex) => cityFromUser === cities[cityIndex].
 
 for (let i = 0; i < distances.length; i++) {
   const {city1, city2, distance} = distances[i];
+  
   if (ifCityMatch(cityFromUser, city1) || ifCityMatch(cityFromUser, city2)) {
     const otherCity = ifCityMatch(cityFromUser, city1) ? city2 : city1;
+    
     if (distance > maxDistance) {
       maxDistance = distance;
       farthestCityIndex = otherCity;
@@ -74,6 +76,24 @@ if (farthestCityIndex !== -1) {
 //  }
 
 //----------------------------------
+
+let minDistance = Infinity; 
+let closestCityIndex = -1;
+
+const isCityMatch = (cityName, cityIndex) => cityFromUser === cities[cityIndex].name;
+
+for (let i = 0; i < distances.length; i++) {
+  const {city1, city2, distance} = distances[i];
+  
+  if (isCityMatch(cityFromUser, city1) || isCityMatch(cityFromUser, city2)) {
+    const otherCity = isCityMatch(cityFromUser, city1) ? city2 : city1;
+    
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestCityIndex = otherCity;
+    }
+  }
+}
 
   //let minDistance = Infinity; 
   //let closestCityIndex = -1;
