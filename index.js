@@ -35,23 +35,6 @@ for (let i = 0; i < cities.length; i++) {
 
 //----------------------------------
 
-let maxDistance = 0;
-let farthestCityIndex = -1;
-
-for (let i = 0; i < distances.length; i++) {
-  if (cityName === cities[distances[i].city1].name || cityName === cities[distances[i].city2].name) {
-    let farthestCity = (cityName === cities[distances[i].city1].name) ? distances[i].city2 : distances[i].city1;
-    if (distances[i].distance > maxDistance) {
-      maxDistance = distances[i].distance;
-      farthestCityIndex = farthestCity;
-    }
-  }
-}
-
-if (farthestCityIndex !== -1) {
-    const cityDivs = document.querySelectorAll(".cityBox");
-    cityDivs[farthestCityIndex].classList.add("furthest");
-  }
 //let maxDistance = 0;
 //let farthestCityIndex = -1;
 //
@@ -72,24 +55,6 @@ if (farthestCityIndex !== -1) {
 
 //----------------------------------
 
-  let minDistance = Infinity; 
-  let closestCityIndex = -1;
-  
-
-  for (let i = 0; i < distances.length; i++) {
-    if (cityName === cities[distances[i].city1].name || cityName === cities[distances[i].city2].name) {
-      let closestCity = (cityName === cities[distances[i].city1].name) ? distances[i].city2 : distances[i].city1;
-      if (distances[i].distance < minDistance) {
-        minDistance = distances[i].distance;
-        closestCityIndex = closestCity;
-      }
-    }
-  }
-
-  if (closestCityIndex !== -1) {
-    const cityDivs = document.querySelectorAll(".cityBox");
-    cityDivs[closestCityIndex].classList.add("closest");
-  }
   //let minDistance = Infinity; 
   //let closestCityIndex = -1;
   //
