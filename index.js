@@ -3,7 +3,7 @@
 // Recommended: constants with references to existing HTML-elements
 
 // Recommended: Ask for the city name and then the rest of the code
-let cityName = prompt ("Vilken stad?");
+let cityFromUser = prompt ("Vilken stad?");
 
 const bigCityDiv = document.querySelector("#cities");
 
@@ -34,6 +34,26 @@ for (let i = 0; i < cities.length; i++) {
 }
 
 //----------------------------------
+
+let maxDistance = 0;
+let farthestCityIndex = -1;
+
+const ifCityMatch = (cityName, cityIndex) => cityFromUser === cities[cityIndex].name;
+
+for (let i = 0; i < distances.length; i++) {
+  const {city1, city2, distance} = distances[i];
+  if (ifCityMatch(cityFromUser, city1) || ifCityMatch(cityFromUser, city2)) {
+    const otherCity = ifCityMatch(cityFromUser, city1) ? city2 : city1;
+    if (distance > maxDistance) {
+      maxDistance = distance;
+      farthestCityIndex = otherCity;
+    }
+  }
+}
+
+if (farthestCityIndex !== -1) {
+  document.querySelectorAll(".cityBox")[farthestCityIndex]?.classList.add("furthest");
+}
 
 //let maxDistance = 0;
 //let farthestCityIndex = -1;
