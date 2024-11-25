@@ -161,3 +161,13 @@ function createTable() {
       tabell.appendChild(emptyCell);
   }
 
+  for (let i = 0; i < rows; i++) {
+      let namesRow = document.createElement("div");
+      namesRow.textContent = cities[i].id + " - " + cities[i].name;
+      namesRow.classList.add("head_row");
+      namesRow.classList.add("cell");
+      tabell.appendChild(namesRow);
+
+      if (i % 2 === 0) {
+        namesRow.classList.add("even_row");
+      }
