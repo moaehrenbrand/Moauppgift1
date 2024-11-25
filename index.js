@@ -137,4 +137,27 @@ if (closestCityIndex !== -1) {
   document.getElementById("closest").textContent = `${cities[closestCityIndex].name}`;
 }
 
+function createTable() {
+  const tabell = document.querySelector("#table"); // Grid-layout
+  tabell.style.width = "100%";
+  tabell.style.display = "grid";
+
+
+  const rows = cities.length;
+  const columns = cities.length + 1; // En extra för header-raden
+
+  // Header-rad
+  for (let a = 0; a < columns; a++) {
+      const emptyCell = document.createElement("div");
+      emptyCell.classList.add("cell");
+      emptyCell.classList.add("head_column");
+      emptyCell.style.display = "grid";
+
+      if (a === 0) {
+          emptyCell.textContent = "";
+      } else {
+          emptyCell.textContent = cities[a - 1].id;
+      }
+      tabell.appendChild(emptyCell);
+  }
 
