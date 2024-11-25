@@ -178,3 +178,14 @@ function createTable() {
           if (j % 2 === 0) {
             cell.style.backgroundColor = "lightgrey";
           }
+
+          let distanceValue = null; //värdet av distance
+          for (let distance of distances) {
+              if ((distance.city1 === cities[i].id && distance.city2 === cities[j].id)) {
+                  distanceValue = distance.distance;
+                  break;
+              }
+              if (distance.city2 === cities[i].id && distance.city1 === cities[j].id) {
+                  distanceValue = distance.distance;
+              }
+          }
