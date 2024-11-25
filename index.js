@@ -129,4 +129,11 @@ for (let i = 0; i < distances.length; i++) {
   //}
 
 //----------------------------------
+if (closestCityIndex !== -1) {
+  const cityDi = document.querySelectorAll(".cityBox");
+  cityDi[closestCityIndex].classList.add("closest");
+  cityDi[closestCityIndex].textContent = `${cities[closestCityIndex].name} ligger ${minDistance/10} mil bort`;
+  document.getElementById("closest").textContent = `${cities[closestCityIndex].name}`;
+}
+
 
