@@ -171,3 +171,10 @@ function createTable() {
       if (i % 2 === 0) {
         namesRow.classList.add("even_row");
       }
+      for (let j = 0; j < cities.length; j++) {
+          const cell = document.createElement("div");
+          cell.classList.add("cell");
+          cell.style.display = "grid";
+          if (j % 2 === 0) {
+            cell.style.backgroundColor = "lightgrey";
+          }
