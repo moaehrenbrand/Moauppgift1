@@ -68,6 +68,7 @@ if (furthestCityIndex !== -1) {
   const cityDi = document.querySelectorAll(".cityBox");
   cityDi[furthestCityIndex].classList.add("furthest");
   cityDi[furthestCityIndex].textContent = `${cities[furthestCityIndex].name} ${maxDistance/10} mil bort`;
+  cityDi[furthestCityIndex].textContent = `${cities[furthestCityIndex].name} ligger ${maxDistance/10} mil bort`;
   document.getElementById("furthest").textContent = `${cities[furthestCityIndex].name}`;
 }
 
