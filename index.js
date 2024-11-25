@@ -44,6 +44,7 @@ if (!cityFound) {
 
 let maxDistance = 0;
 let farthestCityIndex = -1;
+let furthestCityIndex = -1;
 
 const ifCityMatch = (cityName, cityIndex) => cityFromUser === cities[cityIndex].name;
 
@@ -56,12 +57,18 @@ for (let i = 0; i < distances.length; i++) {
     if (distance > maxDistance) {
       maxDistance = distance;
       farthestCityIndex = otherCity;
+      furthestCityIndex = otherCity;
     }
   }
 }
 
 if (farthestCityIndex !== -1) {
   document.querySelectorAll(".cityBox")[farthestCityIndex]?.classList.add("furthest");
+if (furthestCityIndex !== -1) {
+  const cityDi = document.querySelectorAll(".cityBox");
+  cityDi[furthestCityIndex].classList.add("furthest");
+  cityDi[furthestCityIndex].textContent = `${cities[furthestCityIndex].name} ${maxDistance/10} mil bort`;
+  document.getElementById("furthest").textContent = `${cities[furthestCityIndex].name}`;
 }
 
 //let maxDistance = 0;
