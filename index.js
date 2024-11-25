@@ -189,3 +189,20 @@ function createTable() {
                   distanceValue = distance.distance;
               }
           }
+
+          if (distanceValue !== null) {
+              cell.textContent = distanceValue / 10;
+          } else if (i === j) {
+              cell.textContent = "";
+          }
+
+          if (i % 2 === 0) {
+            cell.classList.add("even_row");
+          }
+
+          tabell.appendChild(cell);
+      }
+  }
+}
+
+createTable()
